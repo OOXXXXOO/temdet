@@ -6,7 +6,7 @@
 #    By: winshare <tanwenxuan@live.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/21 15:51:07 by winshare          #+#    #+#              #
-#    Updated: 2020/04/27 17:01:26 by winshare         ###   ########.fr        #
+#    Updated: 2020/04/27 17:46:24 by winshare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@
 # limitations under the License.
 
 
-import tifffile as TIF
-import matplotlib.pyplot as plt
+
+
 from skimage import morphology 
 import cv2
 import glob
@@ -34,8 +34,7 @@ import numpy as np
 from skimage.color import rgb2gray
 from tqdm import tqdm
 import time
-# import tifffile as TIF
-from TIF import TIF
+from .TIF import TIF
 class nmsdet():
     def __init__(self,imagery,CHANNEL_INDEX=[0,1,2,3]):
         """
@@ -181,10 +180,10 @@ class nmsdet():
     def detect(self,threshold = 0.95,drawbox=False,font = cv2.FONT_HERSHEY_SIMPLEX,font_scale = 1,thickness = 2):
         index=0
         img =self.fast_percentager_strentching(image=self.RGB,percentage=1)
-        plt.imshow(img_gray),plt.show()
+ 
         for template in tqdm(self.templates):
             h,w=template.shape[:2]
-            plt.imshow(template),plt.show()
+            # plt.imshow(template),plt.show()
             if self.ndvibuilded:
                 res = cv2.matchTemplate(self.NDVI.astype(np.float32), template.astype(np.float32), cv2.TM_CCOEFF_NORMED)
             else:
@@ -210,7 +209,7 @@ class nmsdet():
                 # cv2.rectangle(org, (start_x, start_y - (2 * baseline + 5)), (start_x + w, start_y), (0, 255, 255), -1)
                 
             image=cv2.putText(image, "BoxNMS:"+str(int(len(self.boxes)*1.5)), (int(W*0.8),int(H*0.1)), font, font_scale, (255, 0, 255), thickness)
-            plt.imshow(image),plt.show()
+            # plt.imshow(image),plt.show()
             cv2.imwrite("result"+str(int(len(self.boxes)*1.5))+".png",image)
         return self.boxes,self.score
 

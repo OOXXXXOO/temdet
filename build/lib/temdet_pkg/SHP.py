@@ -1,5 +1,5 @@
 import sys
-from TIF import TIF
+from .TIF import TIF
 import ogr
 import os
 __version__='3.5.0'

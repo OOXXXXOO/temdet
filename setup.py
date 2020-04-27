@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="temdet", # Replace with your own username
-    version="0.0.2",
+    version="0.0.5",
     author="Winshare",
     author_email="tanwenxuan@live.com",
     description="template & nms to do detection",
