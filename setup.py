@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="temdet-pkg-Winshare", # Replace with your own username
-    version="0.0.1",
+    name="temdet", # Replace with your own username
+    version="0.0.2",
     author="Winshare",
     author_email="tanwenxuan@live.com",
     description="template & nms to do detection",

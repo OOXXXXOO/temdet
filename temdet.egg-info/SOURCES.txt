@@ -1,0 +1,10 @@
+README.md
+setup.py
+temdet.egg-info/PKG-INFO
+temdet.egg-info/SOURCES.txt
+temdet.egg-info/dependency_links.txt
+temdet.egg-info/top_level.txt
+temdet_pkg/SHP.py
+temdet_pkg/TIF.py
+temdet_pkg/__init__.py
+temdet_pkg/temdet.py
